@@ -1,0 +1,23 @@
+{
+  "name": "babel-plugin-vue-like-for-react-and-mobx",
+  "version": "1.0.0",
+  "description": "给React增加VUE类似的功能（使用mobx）",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jadyyang/babel-plugin-vue-like-for-react-and-mobx.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jadyyang/babel-plugin-vue-like-for-react-and-mobx/issues"
+  },
+  "homepage": "https://github.com/jadyyang/babel-plugin-vue-like-for-react-and-mobx#readme",
+  "dependencies": {
+    "babel-types": "^6.26.0",
+    "lodash": "^4.17.11"
+  }
+}
