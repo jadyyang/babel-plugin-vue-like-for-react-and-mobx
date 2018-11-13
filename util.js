@@ -72,7 +72,7 @@ exports.addImportVModel = function addImportVModel(programPath) {
           bt.identifier('handleSetVModelEvent'),
         ),
       ],
-      bt.stringLiteral('babel-plugin-vuestyle-for-react-mobx/vmodel'),
+      bt.stringLiteral('babel-plugin-vue-like-for-react-and-mobx/vmodel'),
     ),
   );
 };
