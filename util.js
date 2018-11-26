@@ -33,25 +33,19 @@ exports.addVModelValueAttr = function addVModelValueAttr(elementPath, vModelProp
   );
 };
 
-// 增加属性：  onChange={(event) => handleVModelEvent(this, "a.b.c", event)}
+// 增加属性：  onChange={createVModelEventHandler(this, "a.b.c")}
 exports.addVModelEventAttr = function addVModelEventAttr(elementPath, vModelPropValue) {
   elementPath.pushContainer(
     'attributes',
     bt.jSXAttribute(
       bt.jSXIdentifier('onChange'),
       bt.jSXExpressionContainer(
-        bt.arrowFunctionExpression(
+        bt.callExpression(
+          bt.identifier('createVModelEventHandler'),
           [
-            bt.identifier('event'),
+            bt.thisExpression(),
+            vModelPropValue,
           ],
-          bt.callExpression(
-            bt.identifier('handleSetVModelEvent'),
-            [
-              bt.thisExpression(),
-              vModelPropValue,
-              bt.identifier('event'),
-            ],
-          ),
         ),
       ),
     ),
@@ -68,8 +62,8 @@ exports.addImportVModel = function addImportVModel(programPath) {
           bt.identifier('getVModelValue'),
         ),
         bt.importSpecifier(
-          bt.identifier('handleSetVModelEvent'),
-          bt.identifier('handleSetVModelEvent'),
+          bt.identifier('createVModelEventHandler'),
+          bt.identifier('createVModelEventHandler'),
         ),
       ],
       bt.stringLiteral('babel-plugin-vue-like-for-react-and-mobx/vmodel'),
